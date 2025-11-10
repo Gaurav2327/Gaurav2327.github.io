@@ -99,14 +99,14 @@ function Profile() {
             className="stat-item"
             whileHover={{ scale: 1.1 }}
           >
-            <span className="stat-number">50+</span>
+            <span className="stat-number">10+</span>
             <span className="stat-label">Projects</span>
           </motion.div>
           <motion.div 
             className="stat-item"
             whileHover={{ scale: 1.1 }}
           >
-            <span className="stat-number">2</span>
+            <span className="stat-number">3</span>
             <span className="stat-label">AWS Certs</span>
           </motion.div>
         </div>

@@ -1,21 +1,26 @@
 import { motion } from 'framer-motion'
 import { FaAws, FaDocker, FaPython, FaGitAlt } from 'react-icons/fa'
-import { SiTerraform, SiKubernetes, SiJenkins, SiTypescript } from 'react-icons/si'
+import { SiTerraform, SiKubernetes, SiJenkins, SiTypescript, SiGithubactions, SiGrafana, SiApachekafka, SiCockroachlabs } from 'react-icons/si'
+import { SiGooglecloud, SiNewrelic, SiPrometheus, SiOpenai } from 'react-icons/si'
 
 function Skills() {
   const skills = [
     { name: "AWS", icon: FaAws, color: "#FF9900" },
+    { name: "GCP", icon: SiGooglecloud, color: "#4285F4" },
     { name: "Terraform", icon: SiTerraform, color: "#7B42BC" },
-    { name: "EKS / Kubernetes", icon: SiKubernetes, color: "#326CE5" },
-    { name: "GitHub Actions", icon: FaGitAlt, color: "#181717" },
+    { name: "ECS / Kubernetes", icon: SiKubernetes, color: "#326CE5" },
+    { name: "GitHub Actions", icon: SiGithubactions, color: "#2088FF" },
     { name: "Jenkins", icon: SiJenkins, color: "#D24939" },
     { name: "Docker", icon: FaDocker, color: "#2496ED" },
-    { name: "CI/CD", color: "#00d1ff" },
+    { name: "CI/CD", icon: SiGithubactions, color: "#2088FF" },
     { name: "Python", icon: FaPython, color: "#3776AB" },
     { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
-    { name: "Monitoring", color: "#7b61ff" },
-    { name: "MSK / Kafka", color: "#231F20" },
-    { name: "CockroachDB", color: "#6933FF" }
+    { name: "Monitoring (Grafana)", icon: SiGrafana, color: "#F46800" },
+    { name: "Logs & Tracing (New Relic)", icon: SiNewrelic, color: "#00C7B7" },
+    { name: "Metrics (Prometheus)", icon: SiPrometheus, color: "#E6522C" },
+    { name: "MSK / Kafka", icon: SiApachekafka, color: "#231F20" },
+    { name: "CockroachDB", icon: SiCockroachlabs, color: "#6933FF" },
+    { name: "GenAI", icon: SiOpenai, color: "#00A67E" }
   ]
 
   const containerVariants = {

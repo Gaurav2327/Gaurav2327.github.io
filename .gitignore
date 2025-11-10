@@ -1,0 +1,38 @@
+# Node dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+.cache/
+.vite/
+
+# Logs
+logs/
+*.log
+*.log.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Test coverage
+coverage/
+
+# Environment files (keep templates tracked)
+.env
+.env.*
+!.env.example
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Misc
+.eslintcache
+.prettier-cache
+
+

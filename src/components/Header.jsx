@@ -1,7 +1,18 @@
 import { motion } from 'framer-motion'
 import { FaEnvelope, FaLinkedin, FaGithub } from 'react-icons/fa'
+import { FaPhone } from 'react-icons/fa'
+import { useState, useEffect } from 'react'
 
 function Header() {
+  const [showPhone, setShowPhone] = useState(false)
+
+  // Auto-reset the flip after a short delay so it flips back to "Call"
+  useEffect(() => {
+    if (!showPhone) return
+    const id = setTimeout(() => setShowPhone(false), 10000)
+    return () => clearTimeout(id)
+  }, [showPhone])
+
   return (
     <motion.div 
       className="header"
@@ -39,7 +50,7 @@ function Header() {
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.4 }}
           >
-            AWS DevOps Engineer • Cloud, IaC, CI/CD, Kubernetes
+            DevOps Engineer • AI enthusiast
           </motion.p>
           
           <motion.div 
@@ -67,7 +78,7 @@ function Header() {
               <FaLinkedin /> LinkedIn
             </motion.a>
             <motion.a 
-              href="https://github.com/gauravdhapola"
+              href="https://github.com/Gaurav2327"
               target="_blank"
               rel="noreferrer"
               className="btn-ghost"
@@ -76,6 +87,46 @@ function Header() {
             >
               <FaGithub /> GitHub
             </motion.a>
+
+            {/* Flip Call button */}
+            <div style={{ perspective: 800 }}>
+              <motion.div
+                style={{ position: 'relative', width: '100%', transformStyle: 'preserve-3d' }}
+                initial={false}
+                animate={{ rotateY: showPhone ? 180 : 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                {/* Front face: Call */}
+                <button
+                  type="button"
+                  className="btn-ghost"
+                  onClick={() => setShowPhone(true)}
+                  style={{
+                    display: showPhone ? 'none' : 'inline-flex',
+                    alignItems: 'center',
+                    gap: 6,
+                    backfaceVisibility: 'hidden'
+                  }}
+                >
+                  <FaPhone /> Call me
+                </button>
+
+                {/* Back face: phone number with tel: link */}
+                <a
+                  href="tel:+919690309285"
+                  className="btn-ghost"
+                  style={{
+                    display: showPhone ? 'inline-flex' : 'none',
+                    alignItems: 'center',
+                    gap: 6,
+                    transform: 'rotateY(180deg)',
+                    backfaceVisibility: 'hidden'
+                  }}
+                >
+                  <FaPhone /> +919690309285
+                </a>
+              </motion.div>
+            </div>
           </motion.div>
         </div>
       </div>

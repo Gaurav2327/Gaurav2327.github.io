@@ -19,7 +19,7 @@ function CodeRain() {
     window.addEventListener('resize', setCanvasSize)
 
     // Code rain characters
-    const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン{}[]()<>/\\|@#$%^&*'
+    const chars = '013456789ABCDEFGHIJKLMNOPQRSTUVWXYZ{}[]()<>/\\|@#$%^&*'
     const fontSize = 14
     const columns = canvas.width / fontSize
 
