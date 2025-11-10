@@ -179,8 +179,32 @@ function Hero() {
               ]
             }}
             transition={{ duration: 3, repeat: Infinity }}
+            style={{
+              background: 'transparent',
+              backgroundImage: 'none',
+              border: '0.5px solid var(--bg-primary)',
+              overflow: 'visible'
+            }}
           >
-            <span className="avatar-text">GD</span>
+            <motion.img
+              src="/assets/image.png"
+              alt="Gaurav Dhapola"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.8, duration: 0.5 }}
+              onError={(e) => {
+                console.error('Image failed to load:', e.target.src);
+              }}
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                borderRadius: '50%',
+                display: 'block',
+                margin: 0,
+                padding: 0
+              }}
+            />
           </motion.div>
         </div>
       </div>
